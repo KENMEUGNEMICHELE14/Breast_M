@@ -1,0 +1,24 @@
+# Environnement virtuel (NE PAS COMMITTER)
+env/
+venv/
+
+
+
+# Caches Python
+__pycache__/
+*.pyc
+
+# Fichiers de données volumineux / temporaires
+data/raw/*
+data/processed/*
+!.gitkeep
+
+# Modèles entraînés (souvent trop lourds pour Git)
+*.joblib
+*.pkl
+*.h5
+
+# Fichiers système & IDE
+.DS_Store
+.vscode/
+.idea/
