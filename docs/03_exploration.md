@@ -114,3 +114,12 @@ L'analyse croisée des variables explicatives confirme l'existence de très fort
   * Les variables de moyenne (`_mean`) sont très fortement corrélées avec leurs contreparties extrêmes (`_worst`) et d'erreur standard (`_se`).
 
 ---
+
+
+# Partie 4 Hypothèses de Modélisation (Machine Learning)
+
+En nous appuyant sur l'analyse de corrélation, nous posons trois hypothèses pour la phase d'apprentissage automatique :
+
+* **Hypothèse 1 (Prédicteurs principaux — $r \ge 0{,}70$)** : Les variables mesurant la concavité et les dimensions maximales de la cellule (`concave points_worst`, `perimeter_worst`, `radius_worst`, `area_worst`) seront les éléments les plus importants pour distinguer une tumeur maligne d'une tumeur bénigne.
+* **Hypothèse 2 (Sensibilité à la redondance — $r \ge 0{,}85$)** : La forte corrélation entre le rayon, le périmètre et la surface ($r > 0{,}98$) perturbera un modèle linéaire comme la **Régression Logistique**, alors qu'un modèle basé sur des arbres comme **Random Forest** la supportera très bien.
+* **Hypothèse 3 (Simplification sans perte de qualité)** : Supprimer les variables redondantes ($\vert{}r\vert{} \ge 0{,}85$) permettra de simplifier le jeu de données tout en conservant un **Rappel (*Recall*)** maximal sur les cas maligns, ce qui est indispensable sur le plan médical pour ne rater aucun cancer.
